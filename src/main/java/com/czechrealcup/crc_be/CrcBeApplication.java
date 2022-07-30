@@ -1,4 +1,4 @@
-package com.example.crc_be;
+package com.czechrealcup.crc_be;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

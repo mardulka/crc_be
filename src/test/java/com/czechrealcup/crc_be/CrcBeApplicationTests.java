@@ -1,4 +1,4 @@
-package com.example.crc_be;
+package com.czechrealcup.crc_be;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
