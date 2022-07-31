@@ -44,13 +44,13 @@ public class CountryEntity {
     @JoinColumn(name = "continent_id", referencedColumnName = "continent_id", nullable = false)
     private ContinentEntity continent;
 
-    @OneToMany(mappedBy = "countryByCountryId")
+    @OneToMany(mappedBy = "country")
     private Collection<ManufacturerEntity> manufacturers;
 
-    @OneToMany(mappedBy = "countryByCountryId")
+    @OneToMany(mappedBy = "country")
     private Collection<SimulatorCountryEntity> simulatorCountries;
 
-    @OneToMany(mappedBy = "countryByCountryId")
+    @OneToMany(mappedBy = "country")
     private Collection<UserEntity> users;
 
 }

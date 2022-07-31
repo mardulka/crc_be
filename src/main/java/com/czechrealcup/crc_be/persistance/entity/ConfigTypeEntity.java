@@ -25,7 +25,7 @@ public class ConfigTypeEntity {
     @Column(name = "name", nullable = true, length = 255)
     private String name;
 
-    @OneToMany(mappedBy = "configTypeByConfigTypeId")
+    @OneToMany(mappedBy = "config")
     private Collection<ServerConfigEntity> serverConfigs;
 
 }

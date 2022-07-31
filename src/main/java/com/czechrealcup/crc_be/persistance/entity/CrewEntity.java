@@ -38,9 +38,9 @@ public class CrewEntity {
     @Column(name = "updated_at", nullable = true)
     private Timestamp updatedAt;
 
-    @OneToMany(mappedBy = "crewByCrewId")
+    @OneToMany(mappedBy = "crew")
     private Collection<ParticipationEntity> participations;
 
-    @OneToMany(mappedBy = "crewByCrewId")
+    @OneToMany(mappedBy = "crew")
     private Collection<UserCrewEntity> userCrews;
 }

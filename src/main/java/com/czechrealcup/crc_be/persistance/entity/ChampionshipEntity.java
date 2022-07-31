@@ -98,18 +98,18 @@ public class ChampionshipEntity {
     @JoinColumn(name = "point_table_id", referencedColumnName = "point_table_id")
     private PointTableEntity pointTable;
 
-    @OneToMany(mappedBy = "championshipByChampionshipId")
+    @OneToMany(mappedBy = "championship")
     private Collection<OrganizingEntity> organizings;
 
-    @OneToMany(mappedBy = "championshipByChampionshipId")
+    @OneToMany(mappedBy = "championship")
     private Collection<ParticipationEntity> participations;
 
-    @OneToMany(mappedBy = "championshipByChampionshipId")
+    @OneToMany(mappedBy = "championship")
     private Collection<RaceCategoryEntity> raceCategories;
 
-    @OneToMany(mappedBy = "championshipByChampionshipId")
+    @OneToMany(mappedBy = "championship")
     private Collection<SetEntity> sets;
 
-    @OneToMany(mappedBy = "championshipByChampionshipId")
+    @OneToMany(mappedBy = "championship")
     private Collection<TeamParticipationEntity> teamParticipations;
 }

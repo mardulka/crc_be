@@ -48,10 +48,10 @@ public class CarCategoryEntity {
     @OneToMany(mappedBy = "carCategory")
     private Collection<CarEntity> cars;
 
-    @OneToMany(mappedBy = "carCategoryByCarCategoryId")
+    @OneToMany(mappedBy = "carCategory")
     private Collection<RaceCategoryEntity> raceCategories;
 
-    @OneToMany(mappedBy = "carCategoryByCarCategoryId")
+    @OneToMany(mappedBy = "carCategory")
     private Collection<SimulatorCarCategoryEntity> simulatorCarCategories;
 
 }

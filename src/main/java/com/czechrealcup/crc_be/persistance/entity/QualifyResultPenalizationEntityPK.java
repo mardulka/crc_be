@@ -1,6 +1,8 @@
 package com.czechrealcup.crc_be.persistance.entity;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Column;
@@ -12,26 +14,16 @@ import java.util.Objects;
 
 @Getter
 @Setter
+@EqualsAndHashCode
+@NoArgsConstructor
 public class QualifyResultPenalizationEntityPK implements Serializable {
     @Column(name = "qualify_result_id", nullable = false)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long qualifyResultId;
+
     @Column(name = "penalization_id", nullable = false)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long penalizationId;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        QualifyResultPenalizationEntityPK that = (QualifyResultPenalizationEntityPK) o;
-        return qualifyResultId == that.qualifyResultId && penalizationId == that.penalizationId;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(qualifyResultId, penalizationId);
-    }
 }

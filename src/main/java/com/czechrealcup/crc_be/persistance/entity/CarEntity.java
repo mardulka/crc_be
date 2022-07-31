@@ -53,10 +53,10 @@ public class CarEntity {
     @JoinColumn(name = "car_category_id", referencedColumnName = "car_category_id", nullable = false)
     private CarCategoryEntity carCategory;
 
-    @OneToMany(mappedBy = "carByCarId")
+    @OneToMany(mappedBy = "car")
     private Collection<LiveryEntity> liveries;
 
-    @OneToMany(mappedBy = "carByCarId")
+    @OneToMany(mappedBy = "car")
     private Collection<SimulatorCarEntity> simulatorCars;
 
 }

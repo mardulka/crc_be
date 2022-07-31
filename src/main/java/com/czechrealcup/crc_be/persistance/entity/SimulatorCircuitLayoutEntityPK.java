@@ -1,6 +1,8 @@
 package com.czechrealcup.crc_be.persistance.entity;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Column;
@@ -12,26 +14,16 @@ import java.util.Objects;
 
 @Getter
 @Setter
+@EqualsAndHashCode
+@NoArgsConstructor
 public class SimulatorCircuitLayoutEntityPK implements Serializable {
     @Column(name = "simulator_id", nullable = false)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long simulatorId;
+
     @Column(name = "circuit_layout_id", nullable = false)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long circuitLayoutId;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        SimulatorCircuitLayoutEntityPK that = (SimulatorCircuitLayoutEntityPK) o;
-        return simulatorId == that.simulatorId && circuitLayoutId == that.circuitLayoutId;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(simulatorId, circuitLayoutId);
-    }
 }

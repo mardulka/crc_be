@@ -42,9 +42,10 @@ public class CupCategoryEntity {
     @Column(name = "updated_at", nullable = true)
     private Timestamp updatedAt;
 
-    @OneToMany(mappedBy = "cupCategoryByCupCategoryId")
+    @OneToMany(mappedBy = "cupCategory")
     private Collection<RaceCategoryEntity> raceCategories;
-    @OneToMany(mappedBy = "cupCategoryByCupCategoryId")
+
+    @OneToMany(mappedBy = "cupCategory")
     private Collection<SimulatorCupCategoryEntity> simulatorCupCategories;
 
 }

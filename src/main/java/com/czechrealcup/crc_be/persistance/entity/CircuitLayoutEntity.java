@@ -49,10 +49,10 @@ public class CircuitLayoutEntity {
     @JoinColumn(name = "circuit_id", referencedColumnName = "circuit_id", nullable = false)
     private CircuitEntity circuit;
 
-    @OneToMany(mappedBy = "circuitLayoutByCircuitLayoutId")
+    @OneToMany(mappedBy = "circuitLayout")
     private Collection<RaceEntity> races;
 
-    @OneToMany(mappedBy = "circuitLayoutByCircuitLayoutId")
+    @OneToMany(mappedBy = "circuitLayout")
     private Collection<SimulatorCircuitLayoutEntity> simulatorCircuitLayouts;
 
 }
