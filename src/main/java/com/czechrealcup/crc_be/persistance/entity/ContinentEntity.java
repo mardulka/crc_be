@@ -1,9 +1,6 @@
 package com.czechrealcup.crc_be.persistance.entity;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,8 +8,10 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@Builder
 @EqualsAndHashCode
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "continent", schema = "crc_db")
 public class ContinentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)

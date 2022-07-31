@@ -1,9 +1,6 @@
 package com.czechrealcup.crc_be.persistance.entity;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -12,8 +9,10 @@ import java.util.Collection;
 @Entity
 @Getter
 @Setter
+@Builder
 @EqualsAndHashCode
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "country", schema = "crc_db")
 public class CountryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
