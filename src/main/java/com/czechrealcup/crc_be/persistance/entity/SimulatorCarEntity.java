@@ -41,9 +41,9 @@ public class SimulatorCarEntity {
 
     @ManyToOne
     @JoinColumn(name = "car_id", referencedColumnName = "car_id", nullable = false, insertable = false, updatable = false)
-    private CarEntity carByCarId;
+    private CarEntity car;
 
     @ManyToOne
     @JoinColumn(name = "simulator_id", referencedColumnName = "simulator_id", nullable = false, insertable = false, updatable = false)
-    private SimulatorEntity simulatorBySimulatorId;
+    private SimulatorEntity simulator;
 }

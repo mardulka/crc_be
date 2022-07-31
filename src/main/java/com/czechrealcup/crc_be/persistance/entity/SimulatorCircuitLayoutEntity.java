@@ -41,9 +41,9 @@ public class SimulatorCircuitLayoutEntity {
 
     @ManyToOne
     @JoinColumn(name = "simulator_id", referencedColumnName = "simulator_id", nullable = false, insertable = false, updatable = false)
-    private SimulatorEntity simulatorBySimulatorId;
+    private SimulatorEntity simulator;
 
     @ManyToOne
     @JoinColumn(name = "circuit_layout_id", referencedColumnName = "circuit_layout_id", nullable = false, insertable = false, updatable = false)
-    private CircuitLayoutEntity circuitLayoutByCircuitLayoutId;
+    private CircuitLayoutEntity circuitLayout;
 }

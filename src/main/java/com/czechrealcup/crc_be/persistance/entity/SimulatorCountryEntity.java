@@ -41,9 +41,9 @@ public class SimulatorCountryEntity {
 
     @ManyToOne
     @JoinColumn(name = "country_id", referencedColumnName = "country_id", nullable = false, insertable = false, updatable = false)
-    private CountryEntity countryByCountryId;
+    private CountryEntity country;
 
     @ManyToOne
     @JoinColumn(name = "simulator_id", referencedColumnName = "simulator_id", nullable = false, insertable = false, updatable = false)
-    private SimulatorEntity simulatorBySimulatorId;
+    private SimulatorEntity simulator;
 }

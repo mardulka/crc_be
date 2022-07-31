@@ -28,9 +28,9 @@ public class SimulatorCarCategoryEntity {
 
     @ManyToOne
     @JoinColumn(name = "simulator_id", referencedColumnName = "simulator_id", nullable = false, insertable = false, updatable = false)
-    private SimulatorEntity simulatorBySimulatorId;
+    private SimulatorEntity simulator;
 
     @ManyToOne
     @JoinColumn(name = "car_category_id", referencedColumnName = "car_category_id", nullable = false, insertable = false, updatable = false)
-    private CarCategoryEntity carCategoryByCarCategoryId;
+    private CarCategoryEntity carCategory;
 }

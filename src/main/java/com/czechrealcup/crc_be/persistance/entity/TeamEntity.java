@@ -50,9 +50,9 @@ public class TeamEntity {
     @Column(name = "updated_at", nullable = true)
     private Timestamp updatedAt;
 
-    @OneToMany(mappedBy = "teamByTeamId")
-    private Collection<MembershipEntity> membershipsByTeamId;
+    @OneToMany(mappedBy = "team")
+    private Collection<MembershipEntity> memberships;
 
-    @OneToMany(mappedBy = "teamByTeamId")
-    private Collection<TeamParticipationEntity> teamParticipationsByTeamId;
+    @OneToMany(mappedBy = "team")
+    private Collection<TeamParticipationEntity> teamParticipations;
 }

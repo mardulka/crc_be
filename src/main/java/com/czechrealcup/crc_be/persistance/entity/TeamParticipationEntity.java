@@ -54,14 +54,14 @@ public class TeamParticipationEntity {
     @Column(name = "updated_at", nullable = true)
     private Timestamp updatedAt;
 
-    @OneToMany(mappedBy = "teamParticipationByTeamParticipationId")
-    private Collection<ParticipationEntity> participationsByTeamParticipationId;
+    @OneToMany(mappedBy = "teamParticipation")
+    private Collection<ParticipationEntity> participations;
 
     @ManyToOne
     @JoinColumn(name = "championship_id", referencedColumnName = "championship_id")
-    private ChampionshipEntity championshipByChampionshipId;
+    private ChampionshipEntity championship;
 
     @ManyToOne
     @JoinColumn(name = "team_id", referencedColumnName = "team_id")
-    private TeamEntity teamByTeamId;
+    private TeamEntity team;
 }

@@ -44,9 +44,9 @@ public class UserLicenseEntity {
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "user_id", nullable = false)
-    private UserEntity userByUserId;
+    private UserEntity user;
 
     @ManyToOne
     @JoinColumn(name = "license_id", referencedColumnName = "license_id", nullable = false)
-    private LicenseEntity licenseByLicenseId;
+    private LicenseEntity license;
 }

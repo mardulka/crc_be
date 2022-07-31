@@ -51,9 +51,9 @@ public class UserCrewEntity {
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
-    private UserEntity userByUserId;
+    private UserEntity user;
 
     @ManyToOne
     @JoinColumn(name = "crew_id", referencedColumnName = "crew_id")
-    private CrewEntity crewByCrewId;
+    private CrewEntity crew;
 }

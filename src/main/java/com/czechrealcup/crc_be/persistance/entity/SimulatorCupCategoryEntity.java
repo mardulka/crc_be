@@ -41,9 +41,9 @@ public class SimulatorCupCategoryEntity {
 
     @ManyToOne
     @JoinColumn(name = "cup_category_id", referencedColumnName = "cup_category_id", nullable = false, insertable = false, updatable = false)
-    private CupCategoryEntity cupCategoryByCupCategoryId;
+    private CupCategoryEntity cupCategory;
 
     @ManyToOne
     @JoinColumn(name = "simulator_id", referencedColumnName = "simulator_id", nullable = false, insertable = false, updatable = false)
-    private SimulatorEntity simulatorBySimulatorId;
+    private SimulatorEntity simulator;
 }

@@ -60,26 +60,26 @@ public class SimulatorEntity {
     private Timestamp updatedAt;
 
     @OneToMany(mappedBy = "simulator")
-    private Collection<ChampionshipEntity> championshipsBySimulatorId;
+    private Collection<ChampionshipEntity> championships;
 
-    @OneToMany(mappedBy = "simulatorBySimulatorId")
-    private Collection<LiveryEntity> liveriesBySimulatorId;
+    @OneToMany(mappedBy = "simulator")
+    private Collection<LiveryEntity> liveries;
 
-    @OneToMany(mappedBy = "simulatorBySimulatorId")
-    private Collection<SimulatorCarEntity> simulatorCarsBySimulatorId;
+    @OneToMany(mappedBy = "simulator")
+    private Collection<SimulatorCarEntity> simulatorCars;
 
-    @OneToMany(mappedBy = "simulatorBySimulatorId")
-    private Collection<SimulatorCarCategoryEntity> simulatorCarCategoriesBySimulatorId;
+    @OneToMany(mappedBy = "simulator")
+    private Collection<SimulatorCarCategoryEntity> simulatorCarCategories;
 
-    @OneToMany(mappedBy = "simulatorBySimulatorId")
-    private Collection<SimulatorCircuitLayoutEntity> simulatorCircuitLayoutsBySimulatorId;
+    @OneToMany(mappedBy = "simulator")
+    private Collection<SimulatorCircuitLayoutEntity> simulatorCircuitLayouts;
 
-    @OneToMany(mappedBy = "simulatorBySimulatorId")
-    private Collection<SimulatorCountryEntity> simulatorCountriesBySimulatorId;
+    @OneToMany(mappedBy = "simulator")
+    private Collection<SimulatorCountryEntity> simulatorCountries;
 
-    @OneToMany(mappedBy = "simulatorBySimulatorId")
-    private Collection<SimulatorCupCategoryEntity> simulatorCupCategoriesBySimulatorId;
+    @OneToMany(mappedBy = "simulator")
+    private Collection<SimulatorCupCategoryEntity> simulatorCupCategories;
 
-    @OneToMany(mappedBy = "simulatorBySimulatorId")
-    private Collection<SimulatorLicenseEntity> simulatorLicensesBySimulatorId;
+    @OneToMany(mappedBy = "simulator")
+    private Collection<SimulatorLicenseEntity> simulatorLicenses;
 }

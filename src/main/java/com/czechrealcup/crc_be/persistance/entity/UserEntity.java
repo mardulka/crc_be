@@ -97,14 +97,14 @@ public class UserEntity {
 
     @ManyToOne
     @JoinColumn(name = "country_id", referencedColumnName = "country_id", nullable = false)
-    private CountryEntity countryByCountryId;
+    private CountryEntity country;
 
-    @OneToMany(mappedBy = "userByUserId")
-    private Collection<UserCrewEntity> userCrewsByUserId;
+    @OneToMany(mappedBy = "user")
+    private Collection<UserCrewEntity> userCrews;
 
-    @OneToMany(mappedBy = "userByUserId")
-    private Collection<UserLicenseEntity> userLicensesByUserId;
+    @OneToMany(mappedBy = "user")
+    private Collection<UserLicenseEntity> userLicenses;
 
-    @OneToMany(mappedBy = "userByUserId")
-    private Collection<UserRoleEntity> userRolesByUserId;
+    @OneToMany(mappedBy = "user")
+    private Collection<UserRoleEntity> userRoles;
 }

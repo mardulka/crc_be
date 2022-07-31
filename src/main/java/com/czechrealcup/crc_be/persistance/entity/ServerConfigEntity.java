@@ -43,9 +43,9 @@ public class ServerConfigEntity {
 
     @ManyToOne
     @JoinColumn(name = "config_type_id", referencedColumnName = "config_type_id")
-    private ConfigTypeEntity configTypeByConfigTypeId;
+    private ConfigTypeEntity configType;
 
     @ManyToOne
     @JoinColumn(name = "race_id", referencedColumnName = "race_id")
-    private RaceEntity raceByRaceId;
+    private RaceEntity race;
 }

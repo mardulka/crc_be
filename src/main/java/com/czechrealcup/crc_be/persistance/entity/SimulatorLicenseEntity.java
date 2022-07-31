@@ -41,9 +41,9 @@ public class SimulatorLicenseEntity {
 
     @ManyToOne
     @JoinColumn(name = "simulator_id", referencedColumnName = "simulator_id", nullable = false, insertable = false, updatable = false)
-    private SimulatorEntity simulatorBySimulatorId;
+    private SimulatorEntity simulator;
 
     @ManyToOne
     @JoinColumn(name = "license_id", referencedColumnName = "license_id", nullable = false, insertable = false, updatable = false)
-    private LicenseEntity licenseByLicenseId;
+    private LicenseEntity license;
 }

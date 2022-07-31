@@ -47,5 +47,5 @@ public class ValuationEntity {
 
     @ManyToOne
     @JoinColumn(name = "point_table_id", referencedColumnName = "point_table_id", nullable = false)
-    private PointTableEntity pointTableByPointTableId;
+    private PointTableEntity pointTable;
 }

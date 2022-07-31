@@ -43,5 +43,5 @@ public class SeriesEntity {
     private Timestamp updatedAt;
 
     @OneToMany(mappedBy = "series")
-    private Collection<ChampionshipEntity> championshipsBySeriesId;
+    private Collection<ChampionshipEntity> championships;
 }

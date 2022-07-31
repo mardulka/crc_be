@@ -47,12 +47,12 @@ public class SetEntity {
     private Timestamp updatedAt;
 
     @OneToMany(mappedBy = "set")
-    private Collection<CarClassEntity> carClassesBySetId;
+    private Collection<CarClassEntity> carClasses;
 
-    @OneToMany(mappedBy = "setBySetId")
-    private Collection<RaceEntity> racesBySetId;
+    @OneToMany(mappedBy = "set")
+    private Collection<RaceEntity> races;
 
     @ManyToOne
     @JoinColumn(name = "championship_id", referencedColumnName = "championship_id", nullable = false)
-    private ChampionshipEntity championshipByChampionshipId;
+    private ChampionshipEntity championship;
 }
