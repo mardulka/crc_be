@@ -10,14 +10,13 @@ import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "race", schema = "crc_db", catalog = "")
+@Table(name = "race", schema = "crc_db")
 public class RaceEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -29,7 +28,7 @@ public class RaceEntity {
     private int raceNo;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 255)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Basic
@@ -45,11 +44,11 @@ public class RaceEntity {
     private Timestamp ingameStart;
 
     @Basic
-    @Column(name = "dur_time", nullable = true)
+    @Column(name = "dur_time")
     private Time durTime;
 
     @Basic
-    @Column(name = "dur_laps", nullable = true)
+    @Column(name = "dur_laps")
     private Integer durLaps;
 
     @Basic
@@ -77,15 +76,15 @@ public class RaceEntity {
     private byte resLocked;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @OneToMany(mappedBy = "race")

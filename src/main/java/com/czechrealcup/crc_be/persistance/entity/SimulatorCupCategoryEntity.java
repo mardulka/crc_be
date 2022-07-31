@@ -7,14 +7,13 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "simulator_cup_category", schema = "crc_db", catalog = "")
+@Table(name = "simulator_cup_category", schema = "crc_db")
 @IdClass(SimulatorCupCategoryEntityPK.class)
 public class SimulatorCupCategoryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,15 +27,15 @@ public class SimulatorCupCategoryEntity {
     private long simulatorId;
 
     @Basic
-    @Column(name = "sim_cup_categ_id", nullable = true)
+    @Column(name = "sim_cup_categ_id")
     private Long simCupCategId;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @ManyToOne

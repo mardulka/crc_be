@@ -9,14 +9,13 @@ import javax.persistence.*;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "race_result", schema = "crc_db", catalog = "")
+@Table(name = "race_result", schema = "crc_db")
 public class RaceResultEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -24,23 +23,23 @@ public class RaceResultEntity {
     private long raceResultId;
 
     @Basic
-    @Column(name = "init_position", nullable = true)
+    @Column(name = "init_position")
     private Integer initPosition;
 
     @Basic
-    @Column(name = "res_position", nullable = true)
+    @Column(name = "res_position")
     private Integer resPosition;
 
     @Basic
-    @Column(name = "points", nullable = true)
+    @Column(name = "points")
     private Integer points;
 
     @Basic
-    @Column(name = "res_class_position", nullable = true)
+    @Column(name = "res_class_position")
     private Integer resClassPosition;
 
     @Basic
-    @Column(name = "class_points", nullable = true)
+    @Column(name = "class_points")
     private Integer classPoints;
 
     @Basic
@@ -48,7 +47,7 @@ public class RaceResultEntity {
     private Time bestLap;
 
     @Basic
-    @Column(name = "consistency", nullable = true, precision = 0)
+    @Column(name = "consistency", precision = 2)
     private Double consistency;
 
     @Basic
@@ -60,19 +59,19 @@ public class RaceResultEntity {
     private int pitstopsNo;
 
     @Basic
-    @Column(name = "note", nullable = true, length = -1)
+    @Column(name = "note", length = -1)
     private String note;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @ManyToOne

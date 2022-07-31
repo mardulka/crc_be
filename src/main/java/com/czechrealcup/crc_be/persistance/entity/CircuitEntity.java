@@ -14,7 +14,7 @@ import java.util.Collection;
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "circuit", schema = "crc_db", catalog = "")
+@Table(name = "circuit", schema = "crc_db")
 public class CircuitEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -22,7 +22,7 @@ public class CircuitEntity {
     private long circuitId;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 255)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Basic
@@ -30,11 +30,11 @@ public class CircuitEntity {
     private byte fictional;
 
     @Basic
-    @Column(name = "logo_URL", nullable = true, length = 255)
+    @Column(name = "logo_URL")
     private String logoUrl;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @ManyToOne

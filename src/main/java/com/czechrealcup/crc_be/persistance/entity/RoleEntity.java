@@ -8,14 +8,13 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "role", schema = "crc_db", catalog = "")
+@Table(name = "role", schema = "crc_db")
 public class RoleEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -23,39 +22,39 @@ public class RoleEntity {
     private long roleId;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 255)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Basic
-    @Column(name = "description", nullable = true, length = 255)
+    @Column(name = "description")
     private String description;
 
     @Basic
-    @Column(name = "color_name", nullable = true, length = 255)
+    @Column(name = "color_name")
     private String colorName;
 
     @Basic
-    @Column(name = "color", nullable = true, length = 255)
+    @Column(name = "color")
     private String color;
 
     @Basic
-    @Column(name = "active", nullable = true)
+    @Column(name = "active")
     private Byte active;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @Basic
-    @Column(name = "new_column", nullable = true)
+    @Column(name = "new_column")
     private Integer newColumn;
 
     @OneToMany(mappedBy = "role")

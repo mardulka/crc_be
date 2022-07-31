@@ -14,7 +14,7 @@ import java.util.Collection;
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "car", schema = "crc_db", catalog = "")
+@Table(name = "car", schema = "crc_db")
 public class CarEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -22,7 +22,7 @@ public class CarEntity {
     private long carId;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 255)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Basic
@@ -34,15 +34,15 @@ public class CarEntity {
     private byte active;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @ManyToOne

@@ -8,14 +8,13 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "race_category", schema = "crc_db", catalog = "")
+@Table(name = "race_category", schema = "crc_db")
 public class RaceCategoryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -23,11 +22,11 @@ public class RaceCategoryEntity {
     private long raceCategoryId;
 
     @Basic
-    @Column(name = "abbr", nullable = false, length = 255)
+    @Column(name = "abbr", nullable = false)
     private String abbr;
 
     @Basic
-    @Column(name = "description", nullable = false, length = 255)
+    @Column(name = "description", nullable = false)
     private String description;
 
     @Basic
@@ -39,15 +38,15 @@ public class RaceCategoryEntity {
     private byte active;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @OneToMany(mappedBy = "raceCategory")

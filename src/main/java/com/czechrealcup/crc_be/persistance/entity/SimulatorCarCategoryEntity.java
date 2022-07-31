@@ -6,14 +6,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "simulator_car_category", schema = "crc_db", catalog = "")
+@Table(name = "simulator_car_category", schema = "crc_db")
 @IdClass(SimulatorCarCategoryEntityPK.class)
 public class SimulatorCarCategoryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)

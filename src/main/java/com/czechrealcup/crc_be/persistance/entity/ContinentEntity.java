@@ -7,14 +7,13 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "continent", schema = "crc_db", catalog = "")
+@Table(name = "continent", schema = "crc_db")
 public class ContinentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -22,7 +21,7 @@ public class ContinentEntity {
     private long continentId;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 255)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @OneToMany(mappedBy = "continent")

@@ -7,14 +7,13 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "server_config", schema = "crc_db", catalog = "")
+@Table(name = "server_config", schema = "crc_db")
 public class ServerConfigEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -22,23 +21,23 @@ public class ServerConfigEntity {
     private long serverConfigId;
 
     @Basic
-    @Column(name = "name", nullable = true, length = 255)
+    @Column(name = "name")
     private String name;
 
     @Basic
-    @Column(name = "URL", nullable = true, length = 255)
+    @Column(name = "URL")
     private String url;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @ManyToOne

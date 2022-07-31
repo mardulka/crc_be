@@ -8,14 +8,13 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "set", schema = "crc_db", catalog = "")
+@Table(name = "set", schema = "crc_db")
 public class SetEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -31,19 +30,19 @@ public class SetEntity {
     private byte resUpdated;
 
     @Basic
-    @Column(name = "res_locked", nullable = true)
+    @Column(name = "res_locked")
     private Byte resLocked;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @OneToMany(mappedBy = "set")

@@ -14,7 +14,7 @@ import java.util.Collection;
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "championship", schema = "crc_db", catalog = "")
+@Table(name = "championship", schema = "crc_db")
 public class ChampionshipEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -30,7 +30,7 @@ public class ChampionshipEntity {
     private int pointsQWon;
 
     @Basic
-    @Column(name = "description", nullable = true, length = 255)
+    @Column(name = "description")
     private String description;
 
     @Basic
@@ -38,7 +38,7 @@ public class ChampionshipEntity {
     private byte published;
 
     @Basic
-    @Column(name = "published_at", nullable = true)
+    @Column(name = "published_at")
     private Timestamp publishedAt;
 
     @Basic
@@ -46,11 +46,11 @@ public class ChampionshipEntity {
     private byte open;
 
     @Basic
-    @Column(name = "open_at", nullable = true)
+    @Column(name = "open_at")
     private Timestamp openAt;
 
     @Basic
-    @Column(name = "close_at", nullable = true)
+    @Column(name = "close_at")
     private Timestamp closeAt;
 
     @Basic
@@ -70,15 +70,15 @@ public class ChampionshipEntity {
     private byte resLocked;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @ManyToOne

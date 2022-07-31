@@ -7,14 +7,13 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "config_type", schema = "crc_db", catalog = "")
+@Table(name = "config_type", schema = "crc_db")
 public class ConfigTypeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -22,7 +21,7 @@ public class ConfigTypeEntity {
     private long configTypeId;
 
     @Basic
-    @Column(name = "name", nullable = true, length = 255)
+    @Column(name = "name")
     private String name;
 
     @OneToMany(mappedBy = "configType")

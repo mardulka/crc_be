@@ -9,14 +9,13 @@ import javax.persistence.*;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "report", schema = "crc_db", catalog = "")
+@Table(name = "report", schema = "crc_db")
 public class ReportEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -24,15 +23,15 @@ public class ReportEntity {
     private long reportId;
 
     @Basic
-    @Column(name = "reported_by", nullable = true)
+    @Column(name = "reported_by")
     private Long reportedBy;
 
     @Basic
-    @Column(name = "designation", nullable = false, length = 255)
+    @Column(name = "designation", nullable = false)
     private String designation;
 
     @Basic
-    @Column(name = "report_text", nullable = true, length = -1)
+    @Column(name = "report_text", length = -1)
     private String reportText;
 
     @Basic
@@ -44,23 +43,23 @@ public class ReportEntity {
     private byte officialReplay;
 
     @Basic
-    @Column(name = "official_replay_time", nullable = true)
+    @Column(name = "official_replay_time")
     private Time officialReplayTime;
 
     @Basic
-    @Column(name = "verdict", nullable = true, length = -1)
+    @Column(name = "verdict", length = -1)
     private String verdict;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @OneToMany(mappedBy = "report")

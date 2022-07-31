@@ -9,14 +9,13 @@ import javax.persistence.*;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "penalization", schema = "crc_db", catalog = "")
+@Table(name = "penalization", schema = "crc_db")
 public class PenalizationEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -24,7 +23,7 @@ public class PenalizationEntity {
     private long penalizationId;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 255)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Basic
@@ -32,23 +31,23 @@ public class PenalizationEntity {
     private String description;
 
     @Basic
-    @Column(name = "time_penalty", nullable = true)
+    @Column(name = "time_penalty")
     private Time timePenalty;
 
     @Basic
-    @Column(name = "position_penalty", nullable = true)
+    @Column(name = "position_penalty")
     private Integer positionPenalty;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @OneToMany(mappedBy = "penalization")

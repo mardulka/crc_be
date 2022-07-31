@@ -14,7 +14,7 @@ import java.util.Collection;
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "country", schema = "crc_db", catalog = "")
+@Table(name = "country", schema = "crc_db")
 public class CountryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -22,7 +22,7 @@ public class CountryEntity {
     private long countryId;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 255)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Basic
@@ -30,11 +30,11 @@ public class CountryEntity {
     private String abbr;
 
     @Basic
-    @Column(name = "flag_URL", nullable = false, length = 255)
+    @Column(name = "flag_URL", nullable = false)
     private String flagUrl;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @OneToMany(mappedBy = "country")
@@ -52,5 +52,4 @@ public class CountryEntity {
 
     @OneToMany(mappedBy = "country")
     private Collection<UserEntity> users;
-
 }

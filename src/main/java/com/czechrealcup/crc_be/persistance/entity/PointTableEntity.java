@@ -8,14 +8,13 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "point_table", schema = "crc_db", catalog = "")
+@Table(name = "point_table", schema = "crc_db")
 public class PointTableEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -23,7 +22,7 @@ public class PointTableEntity {
     private long pointTableId;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 255)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Basic
@@ -35,15 +34,15 @@ public class PointTableEntity {
     private byte locked;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @OneToMany(mappedBy = "pointTable")

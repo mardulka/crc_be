@@ -7,14 +7,13 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "organizing", schema = "crc_db", catalog = "")
+@Table(name = "organizing", schema = "crc_db")
 @IdClass(OrganizingEntityPK.class)
 public class OrganizingEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,15 +27,15 @@ public class OrganizingEntity {
     private long userId;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @ManyToOne

@@ -9,14 +9,13 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "user", schema = "crc_db", catalog = "")
+@Table(name = "user", schema = "crc_db")
 public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -32,39 +31,39 @@ public class UserEntity {
     private String lastName;
 
     @Basic
-    @Column(name = "nick_name", nullable = true, length = 32)
+    @Column(name = "nick_name", length = 32)
     private String nickName;
 
     @Basic
-    @Column(name = "short_name", nullable = true, length = 3)
+    @Column(name = "short_name", length = 3)
     private String shortName;
 
     @Basic
-    @Column(name = "sex", nullable = true, length = 255)
+    @Column(name = "sex")
     private String sex;
 
     @Basic
-    @Column(name = "birth_date", nullable = true)
+    @Column(name = "birth_date")
     private Date birthDate;
 
     @Basic
-    @Column(name = "email", nullable = true, length = 255)
+    @Column(name = "email")
     private String email;
 
     @Basic
-    @Column(name = "email_verified_at", nullable = true)
+    @Column(name = "email_verified_at")
     private Timestamp emailVerifiedAt;
 
     @Basic
-    @Column(name = "password", nullable = true, length = 255)
+    @Column(name = "password")
     private String password;
 
     @Basic
-    @Column(name = "remember_token", nullable = true, length = 100)
+    @Column(name = "remember_token", length = 100)
     private String rememberToken;
 
     @Basic
-    @Column(name = "steam_id", nullable = true)
+    @Column(name = "steam_id")
     private Long steamId;
 
     @Basic
@@ -72,15 +71,15 @@ public class UserEntity {
     private byte active;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @OneToMany(mappedBy = "owner")

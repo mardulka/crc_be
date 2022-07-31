@@ -8,14 +8,13 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "license", schema = "crc_db", catalog = "")
+@Table(name = "license", schema = "crc_db")
 public class LicenseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -23,7 +22,7 @@ public class LicenseEntity {
     private long licenseId;
 
     @Basic
-    @Column(name = "name", nullable = true, length = 64)
+    @Column(name = "name", length = 64)
     private String name;
 
     @Basic
@@ -35,19 +34,19 @@ public class LicenseEntity {
     private byte active;
 
     @Basic
-    @Column(name = "description", nullable = true, length = 255)
+    @Column(name = "description")
     private String description;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @OneToMany(mappedBy = "license")

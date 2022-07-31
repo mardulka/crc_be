@@ -9,14 +9,13 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "simulator", schema = "crc_db", catalog = "")
+@Table(name = "simulator", schema = "crc_db")
 public class SimulatorEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -24,7 +23,7 @@ public class SimulatorEntity {
     private long simulatorId;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 255)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Basic
@@ -32,15 +31,15 @@ public class SimulatorEntity {
     private String abbr;
 
     @Basic
-    @Column(name = "release_date", nullable = true)
+    @Column(name = "release_date")
     private Date releaseDate;
 
     @Basic
-    @Column(name = "producer", nullable = false, length = 255)
+    @Column(name = "producer", nullable = false)
     private String producer;
 
     @Basic
-    @Column(name = "logo_URL", nullable = true, length = 255)
+    @Column(name = "logo_URL")
     private String logoUrl;
 
     @Basic
@@ -48,15 +47,15 @@ public class SimulatorEntity {
     private byte active;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @OneToMany(mappedBy = "simulator")

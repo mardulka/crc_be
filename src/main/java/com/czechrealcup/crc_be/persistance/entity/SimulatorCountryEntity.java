@@ -7,14 +7,13 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "simulator_country", schema = "crc_db", catalog = "")
+@Table(name = "simulator_country", schema = "crc_db")
 @IdClass(SimulatorCountryEntityPK.class)
 public class SimulatorCountryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,15 +27,15 @@ public class SimulatorCountryEntity {
     private long simulatorId;
 
     @Basic
-    @Column(name = "sim_country_id", nullable = true)
+    @Column(name = "sim_country_id")
     private Long simCountryId;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @ManyToOne

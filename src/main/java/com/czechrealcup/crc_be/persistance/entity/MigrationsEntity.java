@@ -6,14 +6,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "migrations", schema = "crc_db", catalog = "")
+@Table(name = "migrations", schema = "crc_db")
 public class MigrationsEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -21,7 +20,7 @@ public class MigrationsEntity {
     private int id;
 
     @Basic
-    @Column(name = "migration", nullable = false, length = 255)
+    @Column(name = "migration", nullable = false)
     private String migration;
 
     @Basic

@@ -8,14 +8,13 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "team_participation", schema = "crc_db", catalog = "")
+@Table(name = "team_participation", schema = "crc_db")
 public class TeamParticipationEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -23,35 +22,35 @@ public class TeamParticipationEntity {
     private long teamParticipationId;
 
     @Basic
-    @Column(name = "name", nullable = true, length = 255)
+    @Column(name = "name")
     private String name;
 
     @Basic
-    @Column(name = "res_position", nullable = true)
+    @Column(name = "res_position")
     private Integer resPosition;
 
     @Basic
-    @Column(name = "res_points", nullable = true)
+    @Column(name = "res_points")
     private Integer resPoints;
 
     @Basic
-    @Column(name = "confirmed", nullable = true)
+    @Column(name = "confirmed")
     private Byte confirmed;
 
     @Basic
-    @Column(name = "active", nullable = true)
+    @Column(name = "active")
     private Byte active;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @OneToMany(mappedBy = "teamParticipation")

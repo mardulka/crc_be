@@ -14,7 +14,7 @@ import java.util.Collection;
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "car_category", schema = "crc_db", catalog = "")
+@Table(name = "car_category", schema = "crc_db")
 public class CarCategoryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -22,7 +22,7 @@ public class CarCategoryEntity {
     private long carCategoryId;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 255)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Basic
@@ -30,19 +30,19 @@ public class CarCategoryEntity {
     private String abbr;
 
     @Basic
-    @Column(name = "logo_URL", nullable = true, length = 255)
+    @Column(name = "logo_URL")
     private String logoUrl;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @OneToMany(mappedBy = "carCategory")

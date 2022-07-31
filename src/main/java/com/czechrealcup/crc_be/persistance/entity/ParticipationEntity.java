@@ -8,14 +8,13 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "participation", schema = "crc_db", catalog = "")
+@Table(name = "participation", schema = "crc_db")
 public class ParticipationEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -23,15 +22,15 @@ public class ParticipationEntity {
     private long participationId;
 
     @Basic
-    @Column(name = "driver_first_name", nullable = true, length = 32)
+    @Column(name = "driver_first_name", length = 32)
     private String driverFirstName;
 
     @Basic
-    @Column(name = "driver_last_name", nullable = true, length = 32)
+    @Column(name = "driver_last_name", length = 32)
     private String driverLastName;
 
     @Basic
-    @Column(name = "driver_short_name", nullable = true, length = 3)
+    @Column(name = "driver_short_name", length = 3)
     private String driverShortName;
 
     @Basic
@@ -47,7 +46,7 @@ public class ParticipationEntity {
     private byte active;
 
     @Basic
-    @Column(name = "res_position", nullable = true)
+    @Column(name = "res_position")
     private Integer resPosition;
 
     @Basic
@@ -55,23 +54,23 @@ public class ParticipationEntity {
     private int resPoints;
 
     @Basic
-    @Column(name = "res_class_position", nullable = true)
+    @Column(name = "res_class_position")
     private Integer resClassPosition;
 
     @Basic
-    @Column(name = "res_class_points", nullable = true)
+    @Column(name = "res_class_points")
     private Integer resClassPoints;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @OneToMany(mappedBy = "participation")

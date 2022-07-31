@@ -9,14 +9,13 @@ import javax.persistence.*;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "practice_result", schema = "crc_db", catalog = "")
+@Table(name = "practice_result", schema = "crc_db")
 public class PracticeResultEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -32,7 +31,7 @@ public class PracticeResultEntity {
     private int lapsCompleted;
 
     @Basic
-    @Column(name = "res_position", nullable = true)
+    @Column(name = "res_position")
     private Integer resPosition;
 
     @Basic
@@ -40,15 +39,15 @@ public class PracticeResultEntity {
     private String note;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @ManyToOne

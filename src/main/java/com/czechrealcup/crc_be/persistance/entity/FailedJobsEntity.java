@@ -7,14 +7,13 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "failed_jobs", schema = "crc_db", catalog = "")
+@Table(name = "failed_jobs", schema = "crc_db")
 public class FailedJobsEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -22,7 +21,7 @@ public class FailedJobsEntity {
     private long id;
 
     @Basic
-    @Column(name = "uuid", nullable = false, length = 255)
+    @Column(name = "uuid", nullable = false)
     private String uuid;
 
     @Basic

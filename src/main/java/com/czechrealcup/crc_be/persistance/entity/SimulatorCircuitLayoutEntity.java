@@ -7,14 +7,13 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "simulator_circuit_layout", schema = "crc_db", catalog = "")
+@Table(name = "simulator_circuit_layout", schema = "crc_db")
 @IdClass(SimulatorCircuitLayoutEntityPK.class)
 public class SimulatorCircuitLayoutEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,15 +27,15 @@ public class SimulatorCircuitLayoutEntity {
     private long circuitLayoutId;
 
     @Basic
-    @Column(name = "sim_circ_des", nullable = true, length = 128)
+    @Column(name = "sim_circ_des", length = 128)
     private String simCircDes;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @ManyToOne

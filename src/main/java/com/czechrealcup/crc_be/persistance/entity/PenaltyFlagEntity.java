@@ -8,14 +8,13 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "penalty_flag", schema = "crc_db", catalog = "")
+@Table(name = "penalty_flag", schema = "crc_db")
 public class PenaltyFlagEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -23,7 +22,7 @@ public class PenaltyFlagEntity {
     private long penaltyFlagId;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 255)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Basic
@@ -31,15 +30,15 @@ public class PenaltyFlagEntity {
     private String description;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @OneToMany(mappedBy = "penaltyFlag")

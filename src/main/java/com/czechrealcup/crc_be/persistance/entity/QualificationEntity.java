@@ -10,14 +10,13 @@ import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "qualification", schema = "crc_db", catalog = "")
+@Table(name = "qualification", schema = "crc_db")
 public class QualificationEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -29,7 +28,7 @@ public class QualificationEntity {
     private int qualificationNo;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 255)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Basic
@@ -49,15 +48,15 @@ public class QualificationEntity {
     private Time durTime;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @ManyToOne

@@ -14,7 +14,7 @@ import java.util.Collection;
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "circuit_layout", schema = "crc_db", catalog = "")
+@Table(name = "circuit_layout", schema = "crc_db")
 public class CircuitLayoutEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -22,7 +22,7 @@ public class CircuitLayoutEntity {
     private long circuitLayoutId;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 255)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Basic
@@ -30,19 +30,19 @@ public class CircuitLayoutEntity {
     private Integer year;
 
     @Basic
-    @Column(name = "map_URL", nullable = true, length = 255)
+    @Column(name = "map_URL")
     private String mapUrl;
 
     @Basic
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
     @Basic
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Basic
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @ManyToOne
@@ -54,5 +54,4 @@ public class CircuitLayoutEntity {
 
     @OneToMany(mappedBy = "circuitLayout")
     private Collection<SimulatorCircuitLayoutEntity> simulatorCircuitLayouts;
-
 }
