@@ -83,17 +83,17 @@ public class UserEntity {
     @Column(name = "updated_at", nullable = true)
     private Timestamp updatedAt;
 
-    @OneToMany(mappedBy = "userByOwnerId")
-    private Collection<LiveryEntity> liveriesByUserId;
+    @OneToMany(mappedBy = "owner")
+    private Collection<LiveryEntity> liveries;
 
-    @OneToMany(mappedBy = "userByUserId")
-    private Collection<MembershipEntity> membershipsByUserId;
+    @OneToMany(mappedBy = "user")
+    private Collection<MembershipEntity> memberships;
 
-    @OneToMany(mappedBy = "userByUserId")
-    private Collection<OrganizingEntity> organizingsByUserId;
+    @OneToMany(mappedBy = "user")
+    private Collection<OrganizingEntity> organizings;
 
-    @OneToMany(mappedBy = "userByUserId")
-    private Collection<ParticipationEntity> participationsByUserId;
+    @OneToMany(mappedBy = "user")
+    private Collection<ParticipationEntity> participations;
 
     @ManyToOne
     @JoinColumn(name = "country_id", referencedColumnName = "country_id", nullable = false)
