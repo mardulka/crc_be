@@ -3,7 +3,9 @@ package com.czechrealcup.crc_be.rest.dto.mapper;
 import com.czechrealcup.crc_be.persistance.entity.CountryEntity;
 import com.czechrealcup.crc_be.rest.dto.CountryDto;
 import com.czechrealcup.crc_be.rest.dto.CountrySingleDto;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CountryMapper {
 
     public static CountryDto entityToDto(CountryEntity country) {

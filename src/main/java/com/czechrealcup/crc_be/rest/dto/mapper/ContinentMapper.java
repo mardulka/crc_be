@@ -3,7 +3,9 @@ package com.czechrealcup.crc_be.rest.dto.mapper;
 import com.czechrealcup.crc_be.persistance.entity.ContinentEntity;
 import com.czechrealcup.crc_be.rest.dto.ContinentDto;
 import com.czechrealcup.crc_be.rest.dto.ContinentSingleDto;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ContinentMapper {
 
     public static ContinentDto entityToDto (ContinentEntity continent){
